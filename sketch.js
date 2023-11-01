@@ -1,21 +1,20 @@
+let circleX, circleY;
+let randomR, randomG, randomB, randomAlpha, randomStroke;
+
 function setup() {
   createCanvas(600, 600);
+  circleX = random(25, 575);
+  circleY = random(25, 575);
+  randomR = random(0, 255);
+  randomG = random(0, 255);
+  randomB = random(0, 255);
+  randomAlpha = random(0, 255);
+  randomStroke = random(0, 10);
 }
 
 function draw() {
   background(220);
-  fill(255,0,0)
-  circle(62, 300, 125)
-
-  fill(0,255,0)
-  circle(187, 300, 125)
-
-  fill(0,0,255)
-  circle(312, 300, 125)
-
-  fill(255,255,0)
-  circle(437, 300, 125)
-
-  fill(255,0,255)
-  circle(562, 300, 125)
+  strokeWeight(randomStroke);
+  fill(randomR, randomG, randomB, randomAlpha);
+  circle(circleX, circleY, 50);
 }
