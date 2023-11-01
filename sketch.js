@@ -1,21 +1,33 @@
+let cubeX, cubeY, cubeSize = 50;
+
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(500, 500);
+  cubeX = cubeSize / 2;
+  cubeY = height / 2;
 }
 
 function draw() {
   background(220);
-  fill(255,0,0)
-  circle(62, 300, 125)
-
-  fill(0,255,0)
-  circle(187, 300, 125)
-
-  fill(0,0,255)
-  circle(312, 300, 125)
-
-  fill(255,255,0)
-  circle(437, 300, 125)
-
-  fill(255,0,255)
-  circle(562, 300, 125)
+  rectMode(CENTER);
+  rect(cubeX, cubeY, cubeSize);
+  if (keyIsDown(LEFT_ARROW)) {
+    if (cubeX > cubeSize / 2) {
+      cubeX -= 5;
+    }
+  }
+  if (keyIsDown(RIGHT_ARROW)) {
+    if (cubeX < width - cubeSize / 2) {
+      cubeX += 5;
+    }
+  }
+  if (keyIsDown(UP_ARROW)) {
+    if (cubeY > cubeSize / 2) {
+      cubeY -= 5;
+    }
+  }
+  if (keyIsDown(DOWN_ARROW)) {
+    if (cubeY < height - cubeSize / 2) {
+      cubeY += 5;
+    }
+  }
 }
